@@ -1,0 +1,78 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>KILLUMINAT — Timeline der Macht</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/app.js"></script>
+</head>
+<body>
+    <div class="scanlines"></div>
+
+    <header class="topbar">
+        <a class="brand" href="index.html">
+            <img class="brand__logo" src="assets/logo.png" alt="Killuminat Logo" onerror="this.style.display='none'; document.querySelector('.brand__text').style.display='inline-block';">
+            <span class="brand__text" style="display:none;">KILLUMINAT</span>
+        </a>
+        <nav class="nav">
+            <a href="levels.html">Levels</a>
+            <a href="map.html">Map</a>
+            <a class="active" href="timeline.html">Timeline</a>
+            <a href="compare.html">Glauben</a>
+            <a href="debate.html">Debatte</a>
+            <a href="oracle.html">Orakel</a>
+            <button class="btn btn--ghost" id="openSecret">Access</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="parallaxHero" id="parallaxHero">
+            <div class="parallaxHero__layer layer1"></div>
+            <div class="parallaxHero__layer layer2"></div>
+            <div class="parallaxHero__layer layer3"></div>
+            <div class="parallaxHero__content">
+                <div class="kicker">ARCHIVE / CHRONOLOGIE</div>
+                <h1 class="title">Timeline der Macht</h1>
+                <p class="muted">Scroll für Parallax. Klick auf Events für Details.</p>
+            </div>
+        </section>
+
+        <section class="split" style="margin-top:16px;">
+            <div class="card">
+                <div class="card__title">Epochen</div>
+                <div class="pillrow" id="eraChips"></div>
+                <div class="divider"></div>
+                <div class="muted tiny">Filtert die Timeline rechts.</div>
+            </div>
+
+            <div class="card">
+                <div class="card__title">Timeline</div>
+                <div class="timeline" id="timelineList"></div>
+            </div>
+        </section>
+
+        <section class="card" style="margin-top:16px;" id="timelineDetail" hidden>
+            <div class="card__title" id="tdTitle">—</div>
+            <div class="muted" id="tdMeta">—</div>
+            <div class="divider"></div>
+            <p class="muted" id="tdBody">—</p>
+            <div class="subhead">Quellen/Dokumente (Platzhalter)</div>
+            <ul class="list" id="tdDocs"></ul>
+        </section>
+    </main>
+
+    <dialog class="modal" id="secretModal">
+        <form method="dialog" class="modal__card">
+            <div class="modal__title">ACCESS REQUEST</div>
+            <p class="muted">Gib das Passwort ein oder finde die Klick-Kombination…</p>
+            <input class="input" id="secretPass" placeholder="Passwort…" autocomplete="off" />
+            <div class="modal__actions">
+                <button class="btn btn--ghost" value="cancel">Abbrechen</button>
+                <button class="btn" id="secretSubmit" value="ok">Prüfen</button>
+            </div>
+            <div class="muted tiny" id="secretHint">Hint: Try “ACCESS GRANTED” 😉</div>
+        </form>
+    </dialog>
+</body>
+</html>

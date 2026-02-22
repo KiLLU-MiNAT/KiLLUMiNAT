@@ -1,0 +1,42 @@
+﻿{
+  "christianity": {
+    "name": "Christentum",
+    "endtimes": "Vielfältig je nach Tradition: apokalyptische Texte, Endgericht-Motive, Hoffnung/Erneuerung.",
+    "messiah": "Messias/Christus zentral; unterschiedliche Auslegungen zu Wiederkunft & Zeichen der Zeit.",
+    "purity": "Ethische Normen, Sakramente/Traditionen; Reinheit eher moralisch/rituell je nach Konfession.",
+    "prophecyStyle": "Prophetische Texte oft symbolisch; Interpretationsschulen (historisch/allegorisch/literal).",
+    "texts": "Beispiele: Bibel (AT/NT), apokalyptische Literatur."
+  },
+  "islam": {
+    "name": "Islam",
+    "endtimes": "Endzeit-Vorstellungen mit Zeichen, Gericht, Jenseits. Schwerpunkte variieren nach Schule/Tradition.",
+    "messiah": "Mahdi-Vorstellungen in Teilen der Tradition; Jesus (ʿIsa) spielt in Endzeit-Erzählungen oft eine Rolle.",
+    "purity": "Rituelle Reinheit (Wudu/Ghusl) + Ethik; klare Praxis-Regeln je nach Rechtsschule.",
+    "prophecyStyle": "Hadith/Überlieferungen + Interpretationen; historisch, rechtlich, spirituell unterschiedlich gewichtet.",
+    "texts": "Beispiele: Koran, Hadith-Sammlungen (je nach Schule)."
+  },
+  "judaism": {
+    "name": "Judentum",
+    "endtimes": "Messianische Erwartungen und Welt-Erneuerung; Auslegung variiert stark zwischen Richtungen.",
+    "messiah": "Messias-Vorstellung eher zukünftige Erlösung/Erneuerung; Interpretationen vielfältig.",
+    "purity": "Rituelle und ethische Aspekte, Gebote/Tradition; Praxis abhängig von Auslegung/Community.",
+    "prophecyStyle": "Prophetische Texte stark kontextgebunden; rabbinische Auslegung prägend.",
+    "texts": "Beispiele: Tanach, rabbinische Literatur (Talmud/Midrash)."
+  },
+  "hinduism": {
+    "name": "Hinduismus",
+    "endtimes": "Zyklisches Zeitbild (Yugas); Weltzeitalter statt einmaligem Endpunkt (vereinfacht).",
+    "messiah": "Avatar-Vorstellungen (z. B. Kalki in manchen Erzählungen) je nach Tradition.",
+    "purity": "Rituelle Reinheit/Praktiken und Ethik variieren stark zwischen Regionen/Schulen.",
+    "prophecyStyle": "Mythologisch-kosmische Rahmungen; Texte/Traditionen vielfältig.",
+    "texts": "Beispiele: Veden/Upanishaden, Epen/Puranas (je nach Schule)."
+  },
+  "esotericism": {
+    "name": "Esoterik",
+    "endtimes": "Häufig Transformations-Narrative (Bewusstsein, Zeitenwende) statt fixer Endgericht-Modelle.",
+    "messiah": "Oft symbolisch: Lehrer/Erwachen statt historischer Messiasfigur (variabel).",
+    "purity": "Praktiken fokussieren oft „Energie/Geist“; Ethik je nach Strömung.",
+    "prophecyStyle": "Channeling/Interpretationen/Traditionen; schwer zu standardisieren.",
+    "texts": "Beispiele: Strömungsspezifische Schriften/Lehren."
+  }
+}

@@ -1,0 +1,171 @@
+﻿[
+  {
+    "id": 1,
+    "kicker": "LEVEL 1 — MAINSTREAM",
+    "title": "Mainstream Ebene",
+    "description": "Offizielle Narrative, Medienberichte, wissenschaftliche Sicht. Fokus: Was ist belegt, was ist Konsens, was ist unklar?",
+    "xp": 30,
+    "contents": [
+      "Offizielle Narrative: Was wird öffentlich behauptet?",
+      "Medienberichte: Welche Quellen, welche Interessen, welche Framing-Patterns?",
+      "Wissenschaftliche Sicht: Daten, Methodik, Peer Review, Unsicherheiten",
+      "Werkzeugkasten: Primärquelle vs. Sekundärquelle, Korrelation vs. Kausalität"
+    ],
+    "checks": [
+      {
+        "title": "Quelle identifizieren",
+        "text": "Nenne Autor, Datum, Medium. Ist es Primär- oder Sekundärquelle?"
+      },
+      {
+        "title": "Gegencheck",
+        "text": "Finde mindestens 1 unabhängige Bestätigung oder eine seriöse Gegenposition."
+      },
+      {
+        "title": "Falsifizierbarkeit",
+        "text": "Formuliere: Was müsste passieren, damit diese Behauptung falsch wäre?"
+      }
+    ],
+    "docs": [
+      {
+        "title": "Platzhalter: Offizielle Dokumente / Pressemitteilungen",
+        "link": ""
+      },
+      {
+        "title": "Platzhalter: Wissenschaftlicher Überblick / Meta-Analyse",
+        "link": ""
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "kicker": "LEVEL 2 — ALTERNATIVE",
+    "title": "Alternative Sicht",
+    "description": "Widersprüche, offene Fragen, historische Ungereimtheiten. Fokus: Wo passt etwas nicht? Wo fehlen Daten?",
+    "xp": 40,
+    "contents": [
+      "Widersprüche: Aussagen vs. Daten vs. Zeitlinien",
+      "Offene Fragen: Was wurde nie sauber belegt?",
+      "Historische Ungereimtheiten: Kontext, Übersetzungen, Versionen",
+      "Werkzeugkasten: Confirmation Bias, Motivated Reasoning"
+    ],
+    "checks": [
+      {
+        "title": "Hypothesen trennen",
+        "text": "Schreibe 2 alternative Erklärungen auf, nicht nur 'Vertuschung'."
+      },
+      {
+        "title": "Beweislast",
+        "text": "Markiere: Was ist Beobachtung, was ist Interpretation?"
+      },
+      {
+        "title": "Stärkstes Gegenargument",
+        "text": "Steelman: Formuliere die beste Gegenposition fair."
+      }
+    ],
+    "docs": [
+      {
+        "title": "Platzhalter: Historische Quellenvergleich-Notizen",
+        "link": ""
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "kicker": "LEVEL 3 — NETZWERKE",
+    "title": "Verborgene Netzwerke",
+    "description": "Geheimgesellschaften, Machtstrukturen, Symbolik. Fokus: Netzwerke & Anreize statt „magische Steuerung“.",
+    "xp": 55,
+    "contents": [
+      "Netzwerkdenken: Knoten, Einfluss, Geldflüsse, Institutionen",
+      "Symbolik: Kontext, Kultur, Mehrdeutigkeit",
+      "Machtstrukturen: Gesetze, Lobbys, Plattformen, Narrative",
+      "Werkzeugkasten: OSINT Basics, Reverse Image Search"
+    ],
+    "checks": [
+      {
+        "title": "Netzwerk skizzieren",
+        "text": "Liste Akteure und Beziehungen (wer profitiert wie?)."
+      },
+      {
+        "title": "Symbol-Kontext",
+        "text": "Nenne 2 mögliche Bedeutungen + warum Kontext entscheidet."
+      },
+      {
+        "title": "Belegkette",
+        "text": "Baue eine saubere Kette: Behauptung → Datenpunkt → Quelle."
+      }
+    ],
+    "docs": [
+      {
+        "title": "Platzhalter: Netzwerkdiagramm / Notizen",
+        "link": ""
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "kicker": "LEVEL 4 — SPIRITUELL",
+    "title": "Spirituelle Ebene",
+    "description": "Religionen, Prophezeiungen, Endzeit-Theorien. Fokus: Vergleich, Begriffe, Quellen, Interpretationsschulen.",
+    "xp": 70,
+    "contents": [
+      "Religiöse Grundbegriffe: Texte, Exegese, Traditionen",
+      "Prophezeiungen: wörtlich vs. metaphorisch, historische Lesarten",
+      "Endzeit-Theorien: Gemeinsamkeiten & Unterschiede",
+      "Werkzeugkasten: Quellenkritik, Übersetzung & Kontext"
+    ],
+    "checks": [
+      {
+        "title": "Begriffe definieren",
+        "text": "Definiere 3 Begriffe (z. B. Messias, Apokalypse, Reinheit) im Kontext."
+      },
+      {
+        "title": "Vergleich",
+        "text": "Nenne 1 Gemeinsamkeit + 1 Unterschied zwischen 2 Traditionen."
+      },
+      {
+        "title": "Interpretationsrahmen",
+        "text": "Wähle: historisch, allegorisch, literal — und begründe."
+      }
+    ],
+    "docs": [
+      {
+        "title": "Platzhalter: Textstellen / Glossar",
+        "link": ""
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "kicker": "LEVEL 5 — ARCHIVE",
+    "title": "Hardcore Archive",
+    "description": "Dokumente, seltene Interviews, Tiefrecherche. Fokus: Struktur, Archivierung, Nachprüfbarkeit.",
+    "xp": 90,
+    "contents": [
+      "Dokumentarchiv: PDFs, Screenshots, Transkripte",
+      "Seltene Interviews: Kontext, Original vs. Cut",
+      "Tiefrecherche: Zeitlinien, Metadaten, Cross-References",
+      "Werkzeugkasten: Dokumentation, Versionskontrolle, Quellendatenbank"
+    ],
+    "checks": [
+      {
+        "title": "Archiv-Standard",
+        "text": "Lege fest: Dateiname, Datum, Quelle, Hash/Notiz."
+      },
+      {
+        "title": "Timeline-Consistency",
+        "text": "Prüfe, ob 3 Events zeitlich logisch zusammenpassen."
+      },
+      {
+        "title": "Gegenquellen",
+        "text": "Finde 1 Quelle, die widerspricht, und erkläre warum."
+      }
+    ],
+    "docs": [
+      {
+        "title": "Platzhalter: Archiv-Index",
+        "link": ""
+      }
+    ]
+  }
+]

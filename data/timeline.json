@@ -1,0 +1,72 @@
+[
+  {
+    "id": "ancient-1",
+    "era": "Antike Zivilisationen",
+    "year": "3000–500 v. Chr.",
+    "title": "Macht & Mythos: Herrschaft legitimieren",
+    "preview": "Frühe Reiche nutzen Religion, Monumente und Verwaltung als Legitimationssysteme.",
+    "body": "In vielen antiken Kontexten sind Religion, Staat und Macht eng verflochten. Killuminat fragt: Welche Quellen sind primär? Welche Narrative wurden später hinzugefügt? Wo endet Archäologie und beginnt Spekulation?",
+    "docs": [
+      {
+        "title": "Platzhalter: Primärtexte/Archäologie",
+        "link": ""
+      }
+    ]
+  },
+  {
+    "id": "medieval-1",
+    "era": "Mittelalter",
+    "year": "500–1500",
+    "title": "Institutionen & Deutungshoheit",
+    "preview": "Texte, Übersetzungen, Schulen — Interpretationen formen Weltbilder.",
+    "body": "Mittelalterliche Macht hängt oft an Institutionen, Schreibkultur und Kontrolle von Bildung. Vergleich religiöser Traditionen zeigt: gleiche Begriffe, unterschiedliche Lesarten.",
+    "docs": [
+      {
+        "title": "Platzhalter: Chroniken/Übersetzungen",
+        "link": ""
+      }
+    ]
+  },
+  {
+    "id": "societies-1",
+    "era": "Geheimgesellschaften",
+    "year": "1500–1900",
+    "title": "Netzwerke: Clubs, Logen, Patronage",
+    "preview": "Nicht Magie, sondern Kontakte, Geld und Zugang — so funktioniert Einfluss oft.",
+    "body": "Viele ‚Geheimgesellschaft‘-Erzählungen vermischen belegte Vereinsstrukturen mit Fantasie. Killuminat trennt: dokumentierte Mitgliedschaft/Einfluss vs. unfalsifizierbare Superplots.",
+    "docs": [
+      {
+        "title": "Platzhalter: Zeitungsarchive",
+        "link": ""
+      }
+    ]
+  },
+  {
+    "id": "modern-1",
+    "era": "Moderne Politik",
+    "year": "1900–heute",
+    "title": "Massenmedien, PR, Plattformen",
+    "preview": "Narrative konkurrieren. Anreize, Algorithmen und Interessen verzerren Wahrnehmung.",
+    "body": "Im 20./21. Jahrhundert spielen Medien-Ökosysteme eine zentrale Rolle. Killuminat-Werkzeug: Quellen prüfen, Motive erkennen, Daten statt Schlagzeilen.",
+    "docs": [
+      {
+        "title": "Platzhalter: Medienanalyse",
+        "link": ""
+      }
+    ]
+  },
+  {
+    "id": "future-1",
+    "era": "Zukunftsprognosen",
+    "year": "2030+",
+    "title": "Zukunft: Kontrolle vs. Komplexität",
+    "preview": "KI, Überwachung, Narrative — aber auch Widerstände, Diversität, Chaos.",
+    "body": "Zukünfte sind Szenarien, keine Gewissheiten. Killuminat vergleicht Hypothesen: Tech-Optimismus, Tech-Autoritarismus, Dezentralisierung — und fordert überprüfbare Indikatoren.",
+    "docs": [
+      {
+        "title": "Platzhalter: Szenario-Frameworks",
+        "link": ""
+      }
+    ]
+  }
+]

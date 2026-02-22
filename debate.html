@@ -1,0 +1,117 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>KILLUMINAT — Debattenraum</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/app.js"></script>
+</head>
+<body>
+    <div class="scanlines"></div>
+
+    <header class="topbar">
+        <a class="brand" href="index.html">
+            <img class="brand__logo" src="assets/logo.png" alt="Killuminat Logo" onerror="this.style.display='none'; document.querySelector('.brand__text').style.display='inline-block';">
+            <span class="brand__text" style="display:none;">KILLUMINAT</span>
+        </a>
+        <nav class="nav">
+            <a href="levels.html">Levels</a>
+            <a href="map.html">Map</a>
+            <a href="timeline.html">Timeline</a>
+            <a href="compare.html">Glauben</a>
+            <a class="active" href="debate.html">Debatte</a>
+            <a href="oracle.html">Orakel</a>
+            <button class="btn btn--ghost" id="openSecret">Access</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="pagehead">
+            <div>
+                <div class="kicker">DEBATE ROOM</div>
+                <h1 class="title">Zwei Narrative</h1>
+                <p class="muted">Stimme ab — aber nur, wenn du Quellen angibst. (Später mit Supabase: echte Community.)</p>
+            </div>
+            <div class="pagehead__right">
+                <div class="panel">
+                    <div class="panel__title">Live-Score (lokal)</div>
+                    <div class="grid2">
+                        <div class="stat">
+                            <div class="stat__label">Narrativ A</div>
+                            <div class="stat__value" id="voteA">—</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__label">Narrativ B</div>
+                            <div class="stat__value" id="voteB">—</div>
+                        </div>
+                    </div>
+                    <button class="btn btn--ghost" id="resetVotes" style="margin-top:10px;">Reset Votes</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="split">
+            <div class="card">
+                <div class="card__title">Narrativ A (Mainstream / offizielle Sicht)</div>
+                <p class="muted">
+                    Argumentiere so stark wie möglich („Steelman“). Nenne überprüfbare Quellen.
+                </p>
+                <ul class="list">
+                    <li>These klar und überprüfbar formulieren</li>
+                    <li>Primärquellen bevorzugen</li>
+                    <li>Was würde diese Sicht falsifizieren?</li>
+                </ul>
+                <button class="btn" data-vote="A">Vote A</button>
+            </div>
+
+            <div class="card">
+                <div class="card__title">Narrativ B (Alternative / kritische Sicht)</div>
+                <p class="muted">
+                    Zeige Widersprüche, offene Fragen, fehlende Daten – ohne unfalsifizierbare „Alles ist Vertuschung“-Schleifen.
+                </p>
+                <ul class="list">
+                    <li>Welche Daten fehlen?</li>
+                    <li>Welche Annahmen stecken drin?</li>
+                    <li>Welche Gegenbelege gibt es?</li>
+                </ul>
+                <button class="btn" data-vote="B">Vote B</button>
+            </div>
+        </section>
+
+        <section class="card" style="margin-top:16px;">
+            <div class="card__title">Quellenpflicht (Demo-Form)</div>
+            <p class="muted">Ohne Quelle kein Vote. (Jetzt lokal gespeichert, später Supabase-DB.)</p>
+
+            <div class="grid2">
+                <input class="input" id="sourceTitle" placeholder="Quelle Titel (z. B. Artikel, Paper, Doku)" />
+                <input class="input" id="sourceLink" placeholder="Link (optional)" />
+            </div>
+
+            <textarea class="input" id="sourceNote" rows="4" placeholder="Kurz: warum ist diese Quelle relevant? Was sagt sie aus?"></textarea>
+
+            <div class="row">
+                <button class="btn" id="saveSource">Quelle speichern</button>
+                <div class="tiny muted" id="sourceStatus"></div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="subhead">Deine gespeicherten Quellen (lokal)</div>
+            <ul class="list" id="sourcesList"></ul>
+        </section>
+    </main>
+
+    <dialog class="modal" id="secretModal">
+        <form method="dialog" class="modal__card">
+            <div class="modal__title">ACCESS REQUEST</div>
+            <p class="muted">Gib das Passwort ein oder finde die Klick-Kombination…</p>
+            <input class="input" id="secretPass" placeholder="Passwort…" autocomplete="off" />
+            <div class="modal__actions">
+                <button class="btn btn--ghost" value="cancel">Abbrechen</button>
+                <button class="btn" id="secretSubmit" value="ok">Prüfen</button>
+            </div>
+            <div class="muted tiny" id="secretHint">Hint: Try “ACCESS GRANTED” 😉</div>
+        </form>
+    </dialog>
+</body>
+</html>

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "area51",
+    "name": "Area 51",
+    "category": "state",
+    "lat": 37.235,
+    "lng": -115.8111,
+    "tagline": "Militär/Geheimhaltung • Testgelände-Mythos",
+    "story": "Area 51 steht sinnbildlich für Geheimhaltung, Black Projects und öffentliche Spekulation. Für Killuminat ist der Fokus: Was ist belegt, was ist Mythos, welche Dokumente existieren, welche Erklärungen konkurrieren?",
+    "images": [ "Satellit", "Sperrzonen", "Mythos vs. Akten" ],
+    "docs": [
+      {
+        "title": "Platzhalter: Offizielle Statements/Declass",
+        "link": ""
+      },
+      {
+        "title": "Platzhalter: Zeitungsarchiv/Timeline",
+        "link": ""
+      }
+    ],
+    "timeline": [
+      {
+        "year": "1950–",
+        "text": "Entwicklung/Testgelände (Kontext: Kalter Krieg, Luftfahrt)."
+      },
+      {
+        "year": "1980–",
+        "text": "Popkultur-Explosion: UFO-Erzählungen & Medien."
+      }
+    ]
+  },
+  {
+    "id": "giza",
+    "name": "Pyramiden von Gizeh",
+    "category": "ancient",
+    "lat": 29.9792,
+    "lng": 31.1342,
+    "tagline": "Antike • Architektur • Symbolik",
+    "story": "Gizeh ist ein Magnet für Theorien. Killuminat trennt: Archäologie/Methoden vs. alternative Hypothesen. Welche Daten sind gesichert (Datierung, Bauphasen) und was bleibt Spekulation?",
+    "images": [ "Archäologie", "Geometrie", "Symbolik" ],
+    "docs": [
+      {
+        "title": "Platzhalter: Archäologische Reports",
+        "link": ""
+      },
+      {
+        "title": "Platzhalter: Alternative Hypothesen (kritisch)",
+        "link": ""
+      }
+    ],
+    "timeline": [
+      {
+        "year": "ca. 2600 v. Chr.",
+        "text": "Bau/Entstehung in dynastischem Kontext (vereinfachter Marker)."
+      },
+      {
+        "year": "Moderne",
+        "text": "Tourismus, Forschung, Debatten."
+      }
+    ]
+  },
+  {
+    "id": "vatican",
+    "name": "Vatikanstadt",
+    "category": "religion",
+    "lat": 41.9029,
+    "lng": 12.4534,
+    "tagline": "Religion • Archive • Machtgeschichte",
+    "story": "Vatikanstadt steht für religiöse Tradition, diplomatische Macht und Archive. Killuminat nutzt den Ort für: Quellenkritik, Geschichte von Institutionen, Dokumentpfade.",
+    "images": [ "Archive", "Diplomatie", "Tradition" ],
+    "docs": [
+      {
+        "title": "Platzhalter: Archiv-Referenzen",
+        "link": ""
+      }
+    ],
+    "timeline": [
+      {
+        "year": "Mittelalter",
+        "text": "Institutionelle Konsolidierung & Einfluss."
+      },
+      {
+        "year": "20.–21. Jh.",
+        "text": "Globaler Einfluss, Medien, Diplomatie."
+      }
+    ]
+  },
+  {
+    "id": "bohemian",
+    "name": "Bohemian Grove",
+    "category": "society",
+    "lat": 38.507,
+    "lng": -123.007,
+    "tagline": "Private Netzwerke • Elite-Treffen (Debattenobjekt)",
+    "story": "Bohemian Grove wird häufig als Beispiel für private Netzwerke genannt. Killuminat-Ansatz: Was ist öffentlich belegt (Teilnehmerlisten/Artikel) vs. was ist reine Behauptung? Welche plausiblen Erklärungen existieren?",
+    "images": [ "Netzwerke", "Ritual-Mythos", "Medienberichte" ],
+    "docs": [
+      {
+        "title": "Platzhalter: Medienberichte + Gegenposition",
+        "link": ""
+      }
+    ],
+    "timeline": [
+      {
+        "year": "Historisch",
+        "text": "Entstehung als exklusiver Club (vereinfachter Marker)."
+      },
+      {
+        "year": "Heute",
+        "text": "Symbol in Verschwörungs-Narrativen."
+      }
+    ]
+  }
+]

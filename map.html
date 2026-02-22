@@ -1,0 +1,92 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>KILLUMINAT — Geheimorte Map</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script defer src="js/app.js"></script>
+</head>
+<body>
+    <div class="scanlines"></div>
+
+    <header class="topbar">
+        <a class="brand" href="index.html">
+            <img class="brand__logo" src="assets/logo.png" alt="Killuminat Logo" onerror="this.style.display='none'; document.querySelector('.brand__text').style.display='inline-block';">
+            <span class="brand__text" style="display:none;">KILLUMINAT</span>
+        </a>
+        <nav class="nav">
+            <a href="levels.html">Levels</a>
+            <a class="active" href="map.html">Map</a>
+            <a href="timeline.html">Timeline</a>
+            <a href="compare.html">Glauben</a>
+            <a href="debate.html">Debatte</a>
+            <a href="oracle.html">Orakel</a>
+            <button class="btn btn--ghost" id="openSecret">Access</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="pagehead">
+            <div>
+                <div class="kicker">FIELD INTEL</div>
+                <h1 class="title">Geheimorte Map</h1>
+                <p class="muted">Klicke Marker: Story • Bilder • Dokumente • Timeline-Events (Platzhalter)</p>
+            </div>
+            <div class="pagehead__right">
+                <div class="panel">
+                    <div class="panel__title">Filter</div>
+                    <select class="input" id="placeFilter">
+                        <option value="all">Alle Orte</option>
+                        <option value="state">Militär / Staat</option>
+                        <option value="ancient">Antike</option>
+                        <option value="religion">Religion</option>
+                        <option value="society">Private Netzwerke</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="split">
+            <div class="card" style="padding:0; overflow:hidden;">
+                <div id="map" style="height:520px;"></div>
+            </div>
+
+            <div class="card" id="placePanel">
+                <div class="card__title" id="placeTitle">Marker auswählen</div>
+                <div class="muted" id="placeMeta">—</div>
+
+                <div class="divider"></div>
+
+                <div class="subhead">Story</div>
+                <p class="muted" id="placeStory">Klicke auf einen Marker, um Details zu sehen.</p>
+
+                <div class="subhead">Bilder</div>
+                <div class="pillrow" id="placeImages"></div>
+
+                <div class="subhead">Dokumente</div>
+                <ul class="list" id="placeDocs"></ul>
+
+                <div class="subhead">Timeline</div>
+                <ul class="list" id="placeTimeline"></ul>
+            </div>
+        </section>
+    </main>
+
+    <dialog class="modal" id="secretModal">
+        <form method="dialog" class="modal__card">
+            <div class="modal__title">ACCESS REQUEST</div>
+            <p class="muted">Gib das Passwort ein oder finde die Klick-Kombination…</p>
+            <input class="input" id="secretPass" placeholder="Passwort…" autocomplete="off" />
+            <div class="modal__actions">
+                <button class="btn btn--ghost" value="cancel">Abbrechen</button>
+                <button class="btn" id="secretSubmit" value="ok">Prüfen</button>
+            </div>
+            <div class="muted tiny" id="secretHint">Hint: Try “ACCESS GRANTED” 😉</div>
+        </form>
+    </dialog>
+</body>
+</html>

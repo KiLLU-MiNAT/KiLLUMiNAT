@@ -1,0 +1,146 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>KILLUMINAT — Verborgene Ebenen</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/app.js"></script>
+</head>
+<body>
+    <div class="scanlines"></div>
+    <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Killuminat Home">
+            <img class="brand__logo" src="assets/logo.png" alt="Killuminat Logo" onerror="this.style.display='none'; document.querySelector('.brand__text').style.display='inline-block';">
+            <span class="brand__text" style="display:none;">KILLUMINAT</span>
+        </a>
+
+        <nav class="nav">
+            <a href="levels.html">Levels</a>
+            <a href="map.html">Map</a>
+            <a href="timeline.html">Timeline</a>
+            <a href="compare.html">Glauben</a>
+            <a href="debate.html">Debatte</a>
+            <a href="oracle.html">Orakel</a>
+            <button class="btn btn--ghost" id="openSecret">Access</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero__left">
+                <div class="kicker">CLASSIFIED / EYES ONLY</div>
+                <h1 class="glitch" data-text="KILLUMINAT">KILLUMINAT</h1>
+                <p class="lead">
+                    Eine Mystery-Bibliothek aus Ebenen, Orten, Timelines und Vergleichstools.
+                    Arbeite dich hoch. Prüfe Quellen. Denk selbst.
+                </p>
+
+                <div class="hero__actions">
+                    <a class="btn" href="levels.html">Levels starten</a>
+                    <a class="btn btn--ghost" href="map.html">Geheimorte öffnen</a>
+                </div>
+
+                <div class="panel">
+                    <div class="panel__title">Dein Status</div>
+                    <div class="grid2">
+                        <div class="stat">
+                            <div class="stat__label">Freigeschaltet</div>
+                            <div class="stat__value" id="statUnlocked">—</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__label">XP</div>
+                            <div class="stat__value" id="statXP">—</div>
+                        </div>
+                    </div>
+                    <div class="muted" style="margin-top:10px;">
+                        Tipp: Erledige „Checks“ in einem Level, um das nächste freizuschalten.
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__right">
+                <div class="card terminal">
+                    <div class="terminal__bar">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                        <span class="terminal__title">killuminat://boot</span>
+                    </div>
+                    <div class="terminal__body" id="bootLog">
+                        <div>> initializing interface…</div>
+                        <div>> loading classified modules…</div>
+                        <div>> verifying clearance…</div>
+                        <div>> ready.</div>
+                    </div>
+                    <div class="terminal__footer">
+                        <span class="pill">Scanlines</span>
+                        <span class="pill">Glitch</span>
+                        <span class="pill">Local Unlock</span>
+                    </div>
+                </div>
+
+                <div class="card quick">
+                    <div class="quick__title">Schnellzugriff</div>
+                    <div class="quick__grid">
+                        <a class="quick__item" href="timeline.html">
+                            <div class="quick__label">Timeline</div>
+                            <div class="muted">Machtstrukturen & Epochen</div>
+                        </a>
+                        <a class="quick__item" href="compare.html">
+                            <div class="quick__label">Glauben</div>
+                            <div class="muted">Endzeit & Prophezeiungen</div>
+                        </a>
+                        <a class="quick__item" href="debate.html">
+                            <div class="quick__label">Debatte</div>
+                            <div class="muted">Zwei Narrative + Quellenpflicht</div>
+                        </a>
+                        <a class="quick__item" href="levels.html">
+                            <div class="quick__label">Levels</div>
+                            <div class="muted">Stufenweise Freischaltung</div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="strip">
+            <div class="strip__item">
+                <div class="strip__title">Level-System</div>
+                <div class="muted">Mainstream → Alternative → Netzwerke → Spirituell → Archive</div>
+            </div>
+            <div class="strip__item">
+                <div class="strip__title">Geheimmodus</div>
+                <div class="muted">Access Granted + Hidden Area</div>
+            </div>
+            <div class="strip__item">
+                <div class="strip__title">Map & Timeline</div>
+                <div class="muted">Orte + Story + Dokumente</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="muted">© <span id="year"></span> KILLUMINAT — Think Twice.</div>
+            <div class="footer__links">
+                <a href="levels.html">Levels</a>
+                <a href="secret.html" class="muted" id="secretLink" style="display:none;">Hidden</a>
+            </div>
+        </div>
+    </footer>
+
+    <dialog class="modal" id="secretModal">
+        <form method="dialog" class="modal__card">
+            <div class="modal__title">ACCESS REQUEST</div>
+            <p class="muted">Gib das Passwort ein oder finde die Klick-Kombination…</p>
+            <input class="input" id="secretPass" placeholder="Passwort…" autocomplete="off" />
+            <div class="modal__actions">
+                <button class="btn btn--ghost" value="cancel">Abbrechen</button>
+                <button class="btn" id="secretSubmit" value="ok">Prüfen</button>
+            </div>
+            <div class="muted tiny" id="secretHint">Hint: Try “ACCESS GRANTED” 😉</div>
+        </form>
+    </dialog>
+
+</body>
+</html>

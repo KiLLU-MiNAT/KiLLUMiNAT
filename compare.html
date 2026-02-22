@@ -1,0 +1,70 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>KILLUMINAT — Glaubensvergleich</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/app.js"></script>
+</head>
+<body>
+    <div class="scanlines"></div>
+
+    <header class="topbar">
+        <a class="brand" href="index.html">
+            <img class="brand__logo" src="assets/logo.png" alt="Killuminat Logo" onerror="this.style.display='none'; document.querySelector('.brand__text').style.display='inline-block';">
+            <span class="brand__text" style="display:none;">KILLUMINAT</span>
+        </a>
+        <nav class="nav">
+            <a href="levels.html">Levels</a>
+            <a href="map.html">Map</a>
+            <a href="timeline.html">Timeline</a>
+            <a class="active" href="compare.html">Glauben</a>
+            <a href="debate.html">Debatte</a>
+            <a href="oracle.html">Orakel</a>
+            <button class="btn btn--ghost" id="openSecret">Access</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="pagehead">
+            <div>
+                <div class="kicker">COMPARE MODULE</div>
+                <h1 class="title">Glaubens-Vergleich</h1>
+                <p class="muted">Wähle 2 Traditionen und vergleiche Endzeit, Messias, Reinheit, Prophezeiungen.</p>
+            </div>
+            <div class="pagehead__right">
+                <div class="panel">
+                    <div class="panel__title">Auswahl</div>
+                    <div class="grid2">
+                        <select class="input" id="faithA"></select>
+                        <select class="input" id="faithB"></select>
+                    </div>
+                    <button class="btn" id="runCompare" style="margin-top:10px;">Vergleichen</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card__title">Vergleich</div>
+            <div class="compare" id="compareGrid"></div>
+            <div class="tiny muted" style="margin-top:10px;">
+                Hinweis: Inhalte hier sind neutrale Struktur-Platzhalter. Du kannst später tiefer gehen + Quellen verlinken.
+            </div>
+        </section>
+    </main>
+
+    <dialog class="modal" id="secretModal">
+        <form method="dialog" class="modal__card">
+            <div class="modal__title">ACCESS REQUEST</div>
+            <p class="muted">Gib das Passwort ein oder finde die Klick-Kombination…</p>
+            <input class="input" id="secretPass" placeholder="Passwort…" autocomplete="off" />
+            <div class="modal__actions">
+                <button class="btn btn--ghost" value="cancel">Abbrechen</button>
+                <button class="btn" id="secretSubmit" value="ok">Prüfen</button>
+            </div>
+            <div class="muted tiny" id="secretHint">Hint: Try “ACCESS GRANTED” 😉</div>
+        </form>
+    </dialog>
+</body>
+</html>

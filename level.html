@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>KILLUMINAT — Level</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/app.js"></script>
+</head>
+<body>
+    <div class="scanlines"></div>
+    <header class="topbar">
+        <a class="brand" href="index.html">
+            <img class="brand__logo" src="assets/logo.png" alt="Killuminat Logo" onerror="this.style.display='none'; document.querySelector('.brand__text').style.display='inline-block';">
+            <span class="brand__text" style="display:none;">KILLUMINAT</span>
+        </a>
+        <nav class="nav">
+            <a href="levels.html">Levels</a>
+            <a href="map.html">Map</a>
+            <a href="timeline.html">Timeline</a>
+            <a href="compare.html">Glauben</a>
+            <a href="debate.html">Debatte</a>
+            <a href="oracle.html">Orakel</a>
+            <button class="btn btn--ghost" id="openSecret">Access</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="pagehead">
+            <div>
+                <div class="kicker" id="lvlKicker">LEVEL</div>
+                <h1 class="title" id="lvlTitle">—</h1>
+                <p class="muted" id="lvlDesc">—</p>
+            </div>
+            <div class="pagehead__right">
+                <div class="panel">
+                    <div class="panel__title">Clearance</div>
+                    <div class="muted">Schließe alle Checks ab, um diesen Level zu „finalisieren“.</div>
+                    <div class="grid2" style="margin-top:10px;">
+                        <div class="stat">
+                            <div class="stat__label">XP</div>
+                            <div class="stat__value" id="lvlXP">—</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__label">Status</div>
+                            <div class="stat__value" id="lvlStatus">—</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="split">
+            <div class="card">
+                <div class="card__title">Inhalte</div>
+                <div id="lvlContent"></div>
+            </div>
+
+            <div class="card">
+                <div class="card__title">Checks (für Freischaltung)</div>
+                <div class="muted">Diese Checks sind bewusst „Denker-Aufgaben“ statt stumpfer Behauptungen.</div>
+                <div class="checks" id="lvlChecks"></div>
+                <div class="row" style="margin-top:12px;">
+                    <button class="btn" id="completeLevel">Level abschließen</button>
+                    <a class="btn btn--ghost" href="levels.html">Zurück</a>
+                </div>
+                <div class="tiny muted" style="margin-top:8px;" id="completeNote"></div>
+            </div>
+        </section>
+
+        <section class="card" style="margin-top:16px;">
+            <div class="card__title">Dokumente & Quellen (Platzhalter)</div>
+            <div class="muted">
+                Hier kannst du später PDFs/Links reinpacken. (Mit Supabase Storage + DB wird’s richtig nice.)
+            </div>
+            <ul class="list" id="lvlDocs"></ul>
+        </section>
+    </main>
+
+    <dialog class="modal" id="secretModal">
+        <form method="dialog" class="modal__card">
+            <div class="modal__title">ACCESS REQUEST</div>
+            <p class="muted">Gib das Passwort ein oder finde die Klick-Kombination…</p>
+            <input class="input" id="secretPass" placeholder="Passwort…" autocomplete="off" />
+            <div class="modal__actions">
+                <button class="btn btn--ghost" value="cancel">Abbrechen</button>
+                <button class="btn" id="secretSubmit" value="ok">Prüfen</button>
+            </div>
+            <div class="muted tiny" id="secretHint">Hint: Try “ACCESS GRANTED” 😉</div>
+        </form>
+    </dialog>
+</body>
+</html>
