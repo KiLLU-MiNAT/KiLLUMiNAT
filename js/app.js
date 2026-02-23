@@ -1,5 +1,5 @@
 /* =========================
-   KILLUMINAT — app.js (stable)
+   KILLUMINAT — app.js (stable + HF Oracle)
    ========================= */
 
 const STORE_KEY = "killuminat_state_v1";
@@ -11,6 +11,9 @@ const DEFAULT_STATE = {
   sources: [],
   votes: { A: 0, B: 0 },
 };
+
+// ✅ Set your Cloudflare Worker endpoint here
+const ORACLE_ENDPOINT = "https://orakel.matschodesignz.workers.dev/";
 
 // ---------- State ----------
 function loadState() {
@@ -643,42 +646,75 @@ function initDebate() {
   renderSources();
 }
 
-// ---------- Oracle demo ----------
+// ---------- Oracle (LIVE via Cloudflare Worker) ----------
 function initOracle() {
   const btn = document.getElementById("oracleAsk");
   const out = document.getElementById("oracleAnswer");
   const q = document.getElementById("oracleQuestion");
+  const modeSel = document.getElementById("oracleMode");
+  const status = document.getElementById("oracleStatus");
+
   if (!btn || !out || !q) return;
 
-  btn.addEventListener("click", () => {
-    const question = q.value.trim();
-    if (!question) return;
+  const setStatus = (t) => { if (status) status.textContent = t || ""; };
 
-    const line = (t) => {
-      const d = document.createElement("div");
-      d.textContent = t;
-      return d;
-    };
+  const setAnswerText = (text) => {
+    // oracleAnswer is a DIV inside terminal__body
+    out.textContent = text || "";
+  };
 
-    out.innerHTML = "";
-    out.appendChild(line(`> question: ${question}`));
-    out.appendChild(line("> generating response…"));
-    out.appendChild(line(""));
-    out.appendChild(line("Orakel (Demo):"));
-    out.appendChild(line("1) Definiere die Behauptung präzise. Wer ist 'wer', was heißt 'kontrollieren'?"));
-    out.appendChild(line("2) Prüfe mehrere Hypothesen: Staaten, Konzerne, Institutionen, Netzwerke, Zufall."));
-    out.appendChild(line("3) Suche nach Datenpunkten: Geldflüsse, Machtpositionen, Gesetze, Anreize."));
-    out.appendChild(line("4) Gegenargument: Komplexe Systeme haben selten einen einzigen 'Mastermind'."));
-    out.appendChild(line(""));
-    out.appendChild(line("Empfehlung: Formuliere eine überprüfbare Teilfrage + sammle Primärquellen."));
-    addXP(5);
+  btn.addEventListener("click", async () => {
+    const question = (q.value || "").trim();
+    const mode = (modeSel?.value || "mystic").trim();
+
+    if (!question) {
+      setStatus("Bitte Frage eingeben.");
+      return;
+    }
+
+    btn.disabled = true;
+    setStatus("Orakel verbindet…");
+    out.innerHTML = `<div class="muted">Warte auf Antwort…</div>`;
+
+    try {
+      const r = await fetch(ORACLE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question, mode })
+      });
+
+      const data = await r.json().catch(async () => ({ error: true, message: await r.text() }));
+
+      if (!r.ok || data?.error) {
+        setStatus("Fehler.");
+        // show detailed worker output for debugging
+        out.textContent = data?.message ? `Fehler: ${data.message}` : JSON.stringify(data, null, 2);
+        console.warn("Oracle error:", data);
+        return;
+      }
+
+      setStatus(`OK ✓ Model: ${data.model || "unknown"} | Mode: ${data.mode || mode}`);
+      setAnswerText(data.answer || "No answer.");
+
+      // optional XP reward for asking
+      addXP(5);
+
+    } catch (e) {
+      setStatus("Netzwerkfehler.");
+      setAnswerText(String(e?.message || e));
+    } finally {
+      btn.disabled = false;
+    }
+  });
+
+  // Ctrl+Enter / Cmd+Enter to send
+  q.addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") btn.click();
   });
 }
 
 // ---------- Boot ----------
 document.addEventListener("DOMContentLoaded", () => {
-  // If you added IDs in HTML (recommended):
-  // <img id="brandLogo" ...> <span id="brandText" ...>
   safe(initBrandFallback);
 
   renderStats();
