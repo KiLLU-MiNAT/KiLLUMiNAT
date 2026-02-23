@@ -771,3 +771,12 @@ textarea {
         grid-template-columns: 1fr
     }
 }
+
+/* --- ORACLE: lange Antworten nicht abschneiden --- */
+.terminal__body {
+  max-height: 360px;      /* kannst du erhöhen: 450px, 600px ... */
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: pre-wrap;  /* Zeilenumbrüche behalten */
+  word-break: break-word; /* lange Wörter/URLs umbrechen */
+}
