@@ -1,84 +1,117 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>KILLUMINAT — Orakel</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script defer src="js/app.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>KILLUMINAT — Orakel</title>
+
+<link rel="stylesheet" href="css/style.css" />
+<script defer src="js/app.js"></script>
 </head>
+
 <body>
-    <div class="scanlines"></div>
+<div class="scanlines"></div>
 
-    <header class="topbar">
-        <a class="brand" href="index.html">
-            <img class="brand__logo" id="brandLogo" src="assets/logo.png" alt="Killuminat Logo">
-            <span class="brand__text" id="brandText" style="display:none;">KILLUMINAT</span>
-        </a>
-        <nav class="nav">
-            <a href="levels.html">Levels</a>
-            <a href="map.html">Map</a>
-            <a href="timeline.html">Timeline</a>
-            <a href="compare.html">Glauben</a>
-            <a href="debate.html">Debatte</a>
-            <a class="active" href="oracle.html">Orakel</a>
-            <button class="btn btn--ghost" id="openSecret">Access</button>
-        </nav>
-    </header>
+<header class="topbar">
+    <a class="brand" href="index.html">
+        <img class="brand__logo" src="assets/logo.png" alt="Killuminat Logo">
+    </a>
 
-    <main class="container">
-        <section class="pagehead">
-            <div>
-                <div class="kicker">ORACLE MODULE</div>
-                <h1 class="title">KI-Orakel (Setup-Platzhalter)</h1>
-                <p class="muted">
-                    Für echte KI-Antworten brauchst du später eine Serverless-API (damit kein Key leakt).
-                    Hier ist erstmal ein UI, das du später „anschließen“ kannst.
-                </p>
-            </div>
-        </section>
+    <nav class="nav">
+        <a href="levels.html">Levels</a>
+        <a href="map.html">Map</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="compare.html">Glauben</a>
+        <a href="debate.html">Debatte</a>
+        <a class="active" href="oracle.html">Orakel</a>
+        <button class="btn btn--ghost" id="openSecret">Access</button>
+    </nav>
+</header>
 
-        <section class="card">
-            <div class="card__title">Frage stellen</div>
-            <input class="input" id="oracleQuestion" placeholder="z. B. Wer kontrolliert wirklich die Welt?" />
-            <div class="row">
-                <button class="btn" id="oracleAsk">Fragen</button>
-                <div class="tiny muted">Jetzt: Demo-Antwort. Später: API-Call.</div>
-            </div>
+<main class="container">
 
-            <div class="divider"></div>
-
-            <div class="subhead">Antwort</div>
-            <div class="terminal" style="margin-top:10px;">
-                <div class="terminal__bar">
-                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                    <span class="terminal__title">oracle://response</span>
-                </div>
-                <div class="terminal__body" id="oracleAnswer">
-                    <div class="muted">Noch keine Anfrage.</div>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-            <div class="subhead">Quellenhinweis</div>
-            <p class="muted tiny">
-                Gute Praxis: Das Orakel sollte immer „Pro & Contra“ + Quellen liefern (sonst wird’s Bias/Storytime).
+    <section class="pagehead">
+        <div>
+            <div class="kicker">ORACLE MODULE</div>
+            <h1 class="title">KI-Orakel</h1>
+            <p class="muted">
+                Stelle eine Frage. Das Orakel analysiert, gibt Gegenargumente und zeigt,
+                wie man die Wahrheit prüft.
             </p>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <dialog class="modal" id="secretModal">
-        <form method="dialog" class="modal__card">
-            <div class="modal__title">ACCESS REQUEST</div>
-            <p class="muted">Gib das Passwort ein oder finde die Klick-Kombination…</p>
-            <input class="input" id="secretPass" placeholder="Passwort…" autocomplete="off" />
-            <div class="modal__actions">
-                <button class="btn btn--ghost" value="cancel">Abbrechen</button>
-                <button class="btn" id="secretSubmit" value="ok">Prüfen</button>
+    <section class="card">
+
+        <div class="card__title">Frage stellen</div>
+
+        <!-- MODE SELECT -->
+        <label class="tiny muted">Modus</label>
+        <select class="input" id="oracleMode">
+            <option value="mystic">Mystic (Killuminat)</option>
+            <option value="analyst" selected>Analyst (Neutral & logisch)</option>
+            <option value="debunker">Debunker (kritisch)</option>
+        </select>
+
+        <div style="height:10px;"></div>
+
+        <!-- QUESTION -->
+        <input
+            class="input"
+            id="oracleQuestion"
+            placeholder="z.B. Wie prüft man eine Behauptung objektiv?"
+        />
+
+        <div class="row">
+            <button class="btn" id="oracleAsk">Orakel fragen</button>
+            <div class="tiny muted" id="oracleStatus">Bereit.</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- ANSWER TERMINAL -->
+        <div class="subhead">Antwort</div>
+
+        <div class="terminal" style="margin-top:10px;">
+            <div class="terminal__bar">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="terminal__title">oracle://response</span>
             </div>
-            <div class="muted tiny" id="secretHint">Hint: Try “ACCESS GRANTED” 😉</div>
-        </form>
-    </dialog>
-</body>
 
+            <div class="terminal__body" id="oracleAnswer">
+                <div class="muted">Noch keine Anfrage.</div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="subhead">Hinweis</div>
+        <p class="muted tiny">
+            Das Orakel liefert Analyse, Gegenargumente und Prüfmethoden.
+            Prüfe Informationen immer selbst anhand verlässlicher Quellen.
+        </p>
+
+    </section>
+</main>
+
+<!-- SECRET MODAL -->
+<dialog class="modal" id="secretModal">
+    <form method="dialog" class="modal__card">
+        <div class="modal__title">ACCESS REQUEST</div>
+        <p class="muted">Gib das Passwort ein oder finde die Klick-Kombination…</p>
+
+        <input class="input" id="secretPass" placeholder="Passwort…" autocomplete="off" />
+
+        <div class="modal__actions">
+            <button class="btn btn--ghost" value="cancel">Abbrechen</button>
+            <button class="btn" id="secretSubmit" value="ok">Prüfen</button>
+        </div>
+
+        <div class="muted tiny" id="secretHint">Hint: Try “ACCESS GRANTED” 😉</div>
+    </form>
+</dialog>
+
+</body>
 </html>
